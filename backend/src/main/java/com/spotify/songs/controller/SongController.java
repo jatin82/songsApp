@@ -50,7 +50,7 @@ public class SongController {
 			songs = this.songsRepo.findByNameOrArtists(name,artist,page);
 		} 
 		else {
-			songs = this.songsRepo.findAllByOrderByRank(page);
+			songs = this.songsRepo.findAllByOrderByRanking(page);
 		} 
 
 		return new ResponseEntity<ResponseData>(new ResponseData<List>(songs, Constants.SUCCESS, HttpStatus.OK),

@@ -1,10 +1,12 @@
 package com.spotify.songs.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name="Song")
@@ -12,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class Song {
 
 	@Id
+	@Column( length=200)
 	private String id;
 
 	private String name;
@@ -44,7 +47,8 @@ public class Song {
 
 	private int time;
 
-	private int rank;
+	@JsonProperty("rank")
+	private int ranking;
 
 	public void generateId() {
 		this.id = this.name+"||"+this.artists;
@@ -175,11 +179,11 @@ public class Song {
 	}
 
 	public int getRank() {
-		return rank;
+		return ranking;
 	}
 
 	public void setRank(int rank) {
-		this.rank = rank;
+		this.ranking = rank;
 	}
 	
 }

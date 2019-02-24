@@ -10,8 +10,8 @@ import com.spotify.songs.model.Song;
 public interface SongsRepository extends JpaRepository<Song, String>{
 
 	
-	List<Song> findAllByOrderByRank(Pageable page);
-	List<Song> findAllByOrderByRank();
+	List<Song> findAllByOrderByRanking(Pageable page);
+	List<Song> findAllByOrderByRanking();
 	List<Song> findByArtists(String artists,Pageable page);
 	List<Song> findByName(String name,Pageable page);
 	List<Song> findByNameOrArtists(String name,String artists,Pageable page);
