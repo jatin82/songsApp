@@ -3,7 +3,9 @@
 /backend!gradle/wrapper/gradle-wrapper.jar
 /backend/top_spotify_021e61205.csv
 /backend/bin/
-/frontend/node_modules
+/frontend/node_modules/
+/frontend/dist/
+/frontend/e2e/
 ### STS ###
 .apt_generated
 .classpath
