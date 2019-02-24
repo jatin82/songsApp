@@ -1,0 +1,119 @@
+/* FontAwesome for working BootSnippet :> */
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#song {
+    background: #eee !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#song .card {
+    border: none;
+    background: #ffffff;
+}
+
+
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+
+.frontside:hover {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 0.5s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 0.5s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 0.5s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 0.5s;
+    -ms-transform-style: preserve-3d;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    -ms-transform: scale(1.5, 1.5); /* IE 9 */
+  -webkit-transform: scale(1.5, 1.5); /* Safari */
+  transform: scale(1.1, 1.1);
+  
+    
+}
+.rank{
+    left: -10px;
+    position: absolute;
+    border-bottom-right-radius: 100px;
+    height: 30px;
+    width: 30px;
+    padding: 31px;
+    line-height: 0;
+    top: -10px;
+    font-size: 30px;
+}
+.badge-text{
+    position: absolute;
+    left: 16px;
+    top: 30px;
+}
+
+
+.frontside .card{
+    height: 300px;
+
+}
+
+.card a {
+    font-size: 18px;
+    color: #007b5e !important;
+}
+
+.frontside .card .card-title{
+    color: whitesmoke !important;
+}
+
+.frontside .card .card-body img {
+    border-radius: 50%;
+    
+}

@@ -1,0 +1,61 @@
+<div class="container">
+<p style="padding-top:50px"></p>
+      <div class="card">
+          
+          <div class="card-header text-center fg-white bg-danger">
+            {{song.name}}
+            
+          </div>
+          <div class="card-body bg-primary fg-white">
+            <h5 class="card-title">{{song.artists}}</h5>
+            
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">Rank</div>
+                    <div class="col-sm-3">#{{song.rank}}</div>
+
+                    <div class="col-sm-3">Acousticness</div>
+                    <div class="col-sm-3">{{song.acousticness}}</div>
+                
+                    <div class="col-sm-3">Danceability</div>
+                    <div class="col-sm-3">{{song.danceability}}</div>
+
+                    <div class="col-sm-3">Duration</div>
+                    <div class="col-sm-3">{{song.duration}}</div>
+                    
+                    <div class="col-sm-3">Energy</div>
+                    <div class="col-sm-3">{{song.energy}}</div>
+                    
+                    <div class="col-sm-3">Instrumentalness</div>
+                    <div class="col-sm-3">{{song.instrumentalness}}</div>
+                    
+                    <div class="col-sm-3">Loudnessess</div>
+                    <div class="col-sm-3">{{song.loudness}}</div>
+                   
+                
+                    <div class="col-sm-3">Key</div>
+                    <div class="col-sm-3">{{song.songKey}}</div>
+
+                    <div class="col-sm-3">Speechiness</div>
+                    <div class="col-sm-3">{{song.speechiness}}</div>
+                    <div class="col-sm-3">tempo</div>
+                    <div class="col-sm-3">{{song.tempo}}</div>
+                    <div class="col-sm-3">Time</div>
+                    <div class="col-sm-3">{{song.time}}</div>
+                    <div class="col-sm-3">Valence</div>
+                    <div class="col-sm-3">{{song.valence}}</div>
+                </div>
+
+            </div>
+            
+          </div>
+          <div class="card-footer text-center">
+              <button class="btn btn-success" [routerLink]="['/']">Back</button>
+            </div>
+        </div>
+
+
+
+        
+    
+</div>

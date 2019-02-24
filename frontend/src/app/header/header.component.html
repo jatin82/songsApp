@@ -1,0 +1,20 @@
+<nav class="navbar fixed-top navbar-light bg-light">
+    <div class="navbar-text">
+        <section class="search-sec bg-primary">
+            <div class="row">
+                <div class="col-lg-4 col-md-3 col-sm-12 p-0">
+                    <input [(ngModel)]="name" type="text" class="form-control search-slt" placeholder="Search by song name">
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-12 p-0">
+                    <input [(ngModel)]="artist" type="text"  class="form-control search-slt" placeholder="Search by artist">
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 p-0">
+                  <input [(ngModel)]="top" type="number"  class="form-control search-slt" placeholder="top" min="0">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-11 p-0">
+                    <button type="button" (click)= "onSearch()" class="btn btn-danger wrn-btn">Search</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</nav>
