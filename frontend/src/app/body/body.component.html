@@ -1,9 +1,19 @@
 
-<section id="song bg-light" class="pb-5">
-    <div class="container">
-        <div class="row">
-            <app-item *ngFor="let song of songs" [song]="song" class="col-xs-12 col-sm-3 col-md-3" style="margin-bottom:10px;"></app-item>
-        </div>
+<div *ngIf="loader;else no_loader">
+    <div id="loader-wrapper">
+        <div id = "loadertwo" style="width:'100px';height:'100px'"></div>
     </div>
-</section>
+</div>
+
+<ng-template #no_loader>
+    <section id="song bg-light" class="pb-5">
+        <div class="container">
+            <div class="row">
+                <app-item *ngFor="let song of songs" [song]="song" class="col-xs-12 col-sm-3 col-md-3" style="margin-bottom:10px;"></app-item>
+            </div>
+        </div>
+    </section>
+</ng-template>
+
+
 <!-- Team -->

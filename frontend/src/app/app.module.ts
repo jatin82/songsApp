@@ -7,10 +7,11 @@ import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { ItemComponent } from './body/item/item.component';
-import { SongsService } from './services/song.service';
+import { SongsService} from './services/song.service';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ItemViewComponent } from './body/item-view/item-view.component';
+import { LoaderService } from './services/loader.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ItemViewComponent } from './body/item-view/item-view.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [SongsService],
+  providers: [SongsService,LoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

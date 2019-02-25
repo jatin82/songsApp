@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SongsService } from '../services/song.service';
-import { HeaderComponent } from '../header/header.component';
+import { LoaderService } from '../services/loader.service';
 
 @Component({
   selector: 'app-body',
@@ -10,21 +10,29 @@ import { HeaderComponent } from '../header/header.component';
 export class BodyComponent implements OnInit {
 
   public filters:Object;
+  public loader:boolean;
   public songs:[];
-  constructor(public songService:SongsService) { 
+  constructor(public songService:SongsService,public loaderService:LoaderService) { 
     this.filters = {top:50};
+    this.loader = false;
   }
 
   ngOnInit() {
+    this.loaderService.emitLoader.subscribe(t=>{
+      console.log("Toggle Loader :"+t);
+      this.loader = t;
+    })
     this.loadSongs();
   }
 
   public loadSongs(){
     console.log("Component requesting songs");
+    this.loaderService.emitLoader.emit(true);
     this.songService.getSongs(this.filters).subscribe(
       response=>{
         console.log("Subscriber get response of songs");
         this.songs = response['data'];
+        this.loaderService.emitLoader.emit(false);
       }
     );
 
@@ -34,7 +42,6 @@ export class BodyComponent implements OnInit {
       this.songs = response;
     });
 
-    
   }
 
 
