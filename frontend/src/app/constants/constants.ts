@@ -1,6 +1,6 @@
 import { PARAMETERS } from '@angular/core/src/util/decorators';
 
-const baseUrl:string = "http://localhost:8085/spotify";
+const baseUrl:string = location.origin+"/spotify";
 const songs:string = "/songs";
 const song:string = "/song";
 const songById = "/song/***";
