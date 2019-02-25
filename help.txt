@@ -1,0 +1,84 @@
+
+Require JAVA 8, MYSQL 5.7.25, Node v8.10.0, npm 3.5.2, Angular cli 7.1.2
+
+
+SETUP project
+
+step 1 : run java application using command
+	
+	java -jar spotify-0.0.1-SNAPSHOT.jar --spring.datasource.url=jdbc:mysql://${databaseUrl}}/${databaseName}--spring.datasource.username=${databaseUsername} --spring.datasource.password=${databasepassword}
+
+  here ${databaseUrl} is database url
+      ${databaseName} is database name which should be created in mysql
+      ${databaseUsername} is username
+      ${databasepassword} is password of database
+
+      for ex - 
+      java -jar spotify-0.0.1-SNAPSHOT.jar --spring.datasource.url=jdbc:mysql://localhost:3306/spotify --spring.datasource.username=root --spring.datasource.password=root
+
+
+
+  Step 2 : import database file to your db using below Postman curl:
+
+        curl -X POST \
+          http://localhost:8085/spotify/db/init \
+          -H 'Content-Type: application/x-www-form-urlencoded' \
+          -H 'Postman-Token: 3a9166db-57fc-46a4-9f4c-edb388f9bb94' \
+          -H 'cache-control: no-cache' \
+          -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+          -F file=@/path-to-file/top_spotify_021e61205.csv
+
+
+
+  step 3 : goto frontend folder
+        a) run on cmd sudo npm install
+        b) run command "ng serve" this will launch frontend on "localhost:4200" to start application    
+
+
+
+Some helpful curl : 
+
+
+
+1. import db: 
+      curl -X POST \
+        http://localhost:8085/spotify/db/init \
+        -H 'Content-Type: application/x-www-form-urlencoded' \
+        -H 'Postman-Token: 3a9166db-57fc-46a4-9f4c-edb388f9bb94' \
+        -H 'cache-control: no-cache' \
+        -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+        -F file=@/home/global/work/playground/hackerearch/Coda/top_spotify_021e61205.csv
+
+
+2. Search top songs :
+    curl -X GET \
+      'http://localhost:8085/spotify/songs?top=4' \
+      -H 'Postman-Token: bd7967a3-fdc2-4b9e-ba72-0141fd789dfb' \
+      -H 'cache-control: no-cache'
+
+
+3. Search song details:
+    curl -X GET \
+      'http://localhost:8085/spotify/song/God%27s%20Plan||Drake' \
+      -H 'Postman-Token: 2a5e5854-9af9-4233-9370-1686973d169d' \
+      -H 'cache-control: no-cache'
+
+4. search song by artist:
+curl -X GET \
+  'http://localhost:8085/spotify/songs?artists=Drake' \
+  -H 'Postman-Token: 170d5664-10f7-4e0c-bf07-f5e00143de3c' \
+  -H 'cache-control: no-cache'
+
+
+5. Search song by name:
+curl -X GET \
+  'http://localhost:8085/spotify/songs?name=God%27s%20Plan' \
+  -H 'Postman-Token: 17a1a305-4f99-4644-b7b8-786bb43853ef' \
+  -H 'cache-control: no-cache'	
+
+
+code repo https://github.com/jatin82/songsApp
+
+application deployed link http://ec2-184-72-125-226.compute-1.amazonaws.com:4200
+
+
