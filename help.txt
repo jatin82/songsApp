@@ -79,6 +79,6 @@ curl -X GET \
 
 code repo https://github.com/jatin82/songsApp
 
-application deployed link http://ec2-184-72-125-226.compute-1.amazonaws.com:4200
+application deployed link http://ec2-3-94-77-200.compute-1.amazonaws.com:8085/spotify/
 
 
